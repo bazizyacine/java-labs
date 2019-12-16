@@ -2,12 +2,7 @@ public class lab3 {
 	public static void main(String[] args) {
 		Objet o1 = new Objet(), o2 = new Objet(), o3 = new Objet();
 		
-		System.out.printf("NombreInstances = %d\n", o1.getNombreInstances());
-		/*
-		 * System.out.printf("NombreInstances = %d\n", o1.nbreInstances);
-		 * o1.nbreInstances = 15; System.out.printf("NombreInstances = %d\n",
-		 * Objet.nbreInstances);
-		 */
+		System.out.printf("NombreInstances = %d\n", Objet.getNombreInstances());
 	}
 }
 
@@ -18,8 +13,8 @@ class Objet {
 		Objet.nbreInstances++;
 	}
 	
-	public int getNombreInstances()
+	public static int getNombreInstances()
 	  {
-	    return nbreInstances;
+	    return Objet.nbreInstances;
 	 }  
 }
