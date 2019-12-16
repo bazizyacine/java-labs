@@ -3,13 +3,16 @@ public class lab3 {
 		Objet o1 = new Objet(), o2 = new Objet(), o3 = new Objet();
 		
 		System.out.printf("NombreInstances = %d\n", o1.getNombreInstances());
-		
-		System.out.printf("NombreInstances = %d\n", Objet.nbreInstances);
+		/*
+		 * System.out.printf("NombreInstances = %d\n", o1.nbreInstances);
+		 * o1.nbreInstances = 15; System.out.printf("NombreInstances = %d\n",
+		 * Objet.nbreInstances);
+		 */
 	}
 }
 
 class Objet {
-	static int nbreInstances = 0;
+	private static int nbreInstances = 0;
 	
 	Objet() {
 		Objet.nbreInstances++;
