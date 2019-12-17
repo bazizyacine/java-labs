@@ -1,7 +1,6 @@
 public class lab5 {
 	public static void main(String[] args) {
-		Point p = new Point(0,0);
-		Cercle c = new Cercle(p, 5);
+		Cercle c = new Cercle(new Point(0,0), 5);
 		c.afficheCercle();
 	}
 }
