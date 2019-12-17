@@ -3,8 +3,10 @@ public class lab9 {
 	public static void main(String[] args) {
 		PointColore pc = new PointColore(1, 5, (byte) 3);
 		
-		System.out.printf("Abscisse : %d, Ordonnée : %d, Couleur : %d", 
-				pc.getABS(), pc.getORD(), pc.getCouleur());
+		System.out.printf("Abscisse : %d, Ordonnée : %d, Couleur : %d\n", 
+				pc.getAbs(), pc.getOrd(), pc.getCouleur());
+		
+		pc.affiche();
 	}
 }
 
@@ -31,13 +33,25 @@ class Point{
 		this.abs = p.abs; this.ord = p.ord;
 	}
 	
-	public int getABS() {
-	    return abs;
-	 }  
-	
-	public int getORD() {
-	    return ord;
-	 }  
+	public int getAbs() {
+		return abs;
+	}
+
+	public void setAbs(int abs) {
+		this.abs = abs;
+	}
+
+	public int getOrd() {
+		return ord;
+	}
+
+	public void setOrd(int ord) {
+		this.ord = ord;
+	}
+
+	public void affiche() {
+		System.out.println("Abscisse : " + this.abs +" Ordonnee : " + this.ord);
+	}
 }
 
 class PointColore extends Point {
@@ -45,14 +59,19 @@ class PointColore extends Point {
 	
 	public PointColore(int x, int y, byte couleur) {
 		super(x);
-		this.couleur = couleur ;
+		this.couleur = couleur;
 	}
 	
 	public void setCouleur(byte couleur) {
-		this.couleur = couleur ;
+		this.couleur = couleur;
 	}
 	
 	public byte getCouleur() {
 		return couleur;
+	}
+	
+	public void affiche() {
+		super.affiche();
+		System.out.print("Couleur : " + this.couleur) ;
 	}
 }
