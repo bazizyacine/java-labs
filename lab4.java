@@ -5,10 +5,10 @@ public class lab4 {
 		Point p3 = new Point(1, 2);
 		Point p4 = new Point(p3);
 		
-		System.out.printf("p1.abs = %d\np1.abs = %d"
-							+ "\np2.abs = %d\np2.abs = %d"
-							+ "\np3.abs = %d\np3.abs = %d"
-							+ "\np4.abs = %d\np4.abs = %d",
+		System.out.printf("p1.abs = %d\np1.ord = %d"
+							+ "\np2.abs = %d\np2.ord = %d"
+							+ "\np3.abs = %d\np3.ord = %d"
+							+ "\np4.abs = %d\np4.ord = %d",
 							p1.getABS(), p1.getORD(), 
 							p2.getABS(), p2.getORD(),
 							p3.getABS(), p3.getORD(),
