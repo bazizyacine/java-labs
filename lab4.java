@@ -45,5 +45,4 @@ class Point{
 	public int getORD() {
 	    return ord;
 	 }  
-	
 }
