@@ -1,10 +1,11 @@
-package edu.B;
+package edu.b;
+import edu.a.A;
 
 public class B {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new edu.A.A();
+		new A();
 	}
 
 	public B() {
