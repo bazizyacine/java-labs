@@ -31,7 +31,7 @@ class Mesure {
 	private double Valeur;
 
 	public Mesure(double v) {
-		if (v >= MIN & v <= MAX & v != 0) {
+		if (v >= MIN & v <= MAX) {
 			this.Valeur = v;
 			Mesure.NbMesures++;
 			Mesure.sommeMesures += this.Valeur;
@@ -41,7 +41,8 @@ class Mesure {
 	}
 	
 	public static void afficherMoyenne() {
-		System.out.printf("La moyenne des %d mesures est : %f", Mesure.NbMesures,
-				Mesure.sommeMesures/Mesure.NbMesures);
+		if (Mesure.NbMesures != 0)
+			System.out.printf("La moyenne des %d mesures est : %f", Mesure.NbMesures,
+					Mesure.sommeMesures/Mesure.NbMesures);
 	}
 }
