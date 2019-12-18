@@ -11,6 +11,15 @@ public class lab10 {
 		System.out.println("Méthode affiche de la classe PointEtq :");
 		PointEtq p3 = new PointEtq(1, 2, (byte) 7, "etq");
 		p3.affiche();
+		
+		A a = new A() ;
+		B b = new B() ;
+		int n = 3;
+		
+		a.f(n);
+		b.f(n);
+		a = b;
+		a.f(n);
 	}
 }
 
@@ -102,5 +111,13 @@ class PointEtq extends PointColore {
 	}
 }
 
+class A {
+	public A() {}
+	public void f(float x) { System.out.println("1"); }
+}
 
-
+class B extends A {
+	public B() {}
+	public void f(float x) { System.out.println("2"); } // redéfinition de f
+	public void f(int n) { System.out.println("3"); } // surcharge de f
+}
