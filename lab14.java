@@ -42,6 +42,6 @@ class TestInterfaceJava8 extends MaClasse implements I1, I2 {
 		I1.super.direBonsoir();
 		I1.super.direSalut();
 		I2.super.direSalut();
-		direBonsoir();
+		this.direBonsoir();
 	}
 }
