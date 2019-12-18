@@ -13,8 +13,7 @@ public class lab16 {
 class Point{
 	private int abs, ord;
 
-	public Point(int x, int y) 
-	throws ErrConstructeurException {
+	public Point(int x, int y) throws ErrConstructeurException {
 		if (x < 0 || y < 0)
 			throw new ErrConstructeurException();
 		else {
@@ -48,6 +47,6 @@ class ErrConstructeurException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	public ErrConstructeurException() {
-		System.out.println ("L’une des coordonnées est négative !");
+		System.out.println ("Lâ€™une des coordonnÃ©es est nÃ©gative !");
 	}  
 }
