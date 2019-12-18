@@ -21,10 +21,9 @@ class Point {
 			///throw new ErrConstructeurException(x, y);
 			throw new ErrConstructeurException("Coord. erronees: " + x + " " + y);
 		}
-		else {
-			this.abs = x; 
-			this.ord = y;
-		}
+		
+		this.abs = x; 
+		this.ord = y;
 	}
 	
 	public int getAbs() {
