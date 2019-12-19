@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class lab22 {
 	public static void main(String[] args) {
-		Point p1 = new Point(3, 3);
+		Point p1 = new Point(1, 3);
 		Point p2 = new Point(3, 3);
+		
+		PointComparator pc = new PointComparator();
 		
 		if (p1.equals(p2) == true) 
 			System.out.println("equals : p1 = p2");
@@ -21,6 +23,15 @@ public class lab22 {
 		if (p1.compareTo(p2) == 0) 
 			System.out.println("compareTo : p1 = p2");
 		
+		if (pc.compare(p1, p2) < 0) 
+			System.out.println("compare : p1 < p2");
+		
+		if (pc.compare(p1, p2) > 0) 
+			System.out.println("compare : p1 > p2");
+
+		if (pc.compare(p1, p2) == 0) 
+			System.out.println("compare : p1 = p2");
+
 		new TestPoint();
 	}
 }
@@ -77,15 +88,19 @@ class Point implements Comparable<Point> {
 }
 
 class PointComparator implements Comparator<Point> {
+	@Override
 	public int compare(Point point1, Point point2)
 	{
 		int compAbs = ((Integer) point1.getAbs()).compareTo(((Integer) point2.getAbs()));
 		  
 		if (compAbs != 0) { return compAbs; }
 		  
-		int compOrd = ((Integer) point1.getOrd()).compareTo(((Integer) point2.getOrd()));
-
-	    if (compOrd != 0) { return compOrd; }
+		/*
+		 * int compOrd = ((Integer) point1.getOrd()).compareTo(((Integer)
+		 * point2.getOrd()));
+		 * 
+		 * if (compOrd != 0) { return compOrd; }
+		 */
 
 	    return 0;
 	}
@@ -104,11 +119,15 @@ class TestPoint {
 			System.out.printf("%s\n", points[i].toString());
 		}
 		
-		System.out.printf("points[] : %s\n", Arrays.toString(points));
+		System.out.println("Before sorting: " + Arrays.toString(points));
 		
 		Arrays.sort(points);
 		
-		System.out.printf("Sort points[] : %s\n", Arrays.toString(points));
+		System.out.printf("After sorting1: %s\n", Arrays.toString(points));
+		
+		Arrays.sort(points, new PointComparator());
+		 
+		System.out.printf("After sorting2: %s\n", Arrays.toString(points));
 
 		Point pointsKey = new Point(sc.nextInt(), sc.nextInt());
 		System.out.printf("%s\n", pointsKey.toString());
