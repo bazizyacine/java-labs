@@ -1,34 +1,38 @@
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 public class lab31 {
 	public static void main(String[] args) {	
-		new TestInterfaceBorderLayout().dessinerFenetre();
+		new MaFenetre();
 	}	
 }
 
-class TestInterfaceBorderLayout extends JFrame {
+class MaFenetre extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 
-	TestInterfaceBorderLayout() {
+	private JButton b1, b2;
+	
+	MaFenetre() {
+		this.setTitle("Deux-boutons");
+		this.setSize(200,80);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setVisible(true);
+		
+		b1 = new JButton("OK");
+		b2 = new JButton("Annuler");
+		this.getContentPane().add(b1);
+		this.getContentPane().add(b2);
+		this.getContentPane().setLayout (new FlowLayout());
+		
+		b1.addActionListener(this);
+		b2.addActionListener(this);
 	}
 	
-	public void dessinerFenetre() {
-		this.setSize(500, 300);
-		this.setTitle("Mon Interface");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLocationRelativeTo(null);
-		
-		Container conteneur = this.getContentPane(); // Type Container
-		conteneur.setLayout(new BorderLayout()); //Utilisation BorderLayout
-		
-		JButton monBouton = new JButton("OK"); //Création compostants
-		JPanel panneau = new JPanel();
-		
-		panneau.setBackground(Color.WHITE);
-		conteneur.add(monBouton, BorderLayout.SOUTH); //Positionnement
-		conteneur.add(panneau, BorderLayout.CENTER);
-		
-		this.setVisible(true); // Affichage fenêtre
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == b1)
+			System.out.println("OK");
+		else
+			System.out.println("Annuler");
 	}
 }
